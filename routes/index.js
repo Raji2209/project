@@ -2,6 +2,12 @@ var express = require('express'),
     router = express.Router();
 var nodemailer = require('nodemailer');
 
+
+router.get('/',function(req,res,next){
+   res.render('index');
+
+});
+
 /**
 * send contact email
 */
@@ -9,7 +15,7 @@ router.post('/send', function (req, res, next) {
 
     console.log(" entering ");
     try {
-        var transporter = nodemailer.createTransport('smtps://raji.contactable@gmail.com:(Raji)1234@smtp.gmail.com');
+        var transporter = nodemailer.createTransport('smtps://'+process.env.EMAIL_USER+':'+process.env.EMAIL_PASSSWORD+'@smtp.gmail.com');
 
         // setup e-mail data with unicode symbols 
         var mailOptions = {
@@ -25,7 +31,7 @@ router.post('/send', function (req, res, next) {
             if (error) {
                 return console.log(error);
             }
-            res.send(200);
+            res.render('index');
             console.log('Message sent: ' + info.response);
         });
     } catch (e) {
