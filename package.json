@@ -1,0 +1,21 @@
+{
+  "name": "static1234",
+  "version": "1.0.0",
+  "description": "trying",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+<<<<<<< HEAD
+    "sendgrid": "^4.5.0"
+=======
+    "sendgrid": "^4.5.0",
+	"nodemailer": "2.6.0"
+>>>>>>> 503519e5c76cfeed6e3a2704b762b8e880981831
+  },
+  "devDependencies": {}
+}
